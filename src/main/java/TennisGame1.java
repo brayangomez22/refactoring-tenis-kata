@@ -12,7 +12,10 @@ public class TennisGame1 implements TennisGame {
     }
 
     public void wonPoint(String playerName) {
-        int i = (playerName == playerOneName) ?(playerOneScore += 1) : (playerTwoScore += 1);
+        if (playerName == "player1")
+            playerOneScore += 1;
+        else
+            playerTwoScore += 1;
     }
 
     public String getScore() {
@@ -48,16 +51,12 @@ public class TennisGame1 implements TennisGame {
         else
         {
             int tempScore = 0;
+            tempScore = playerOneScore;
+            score = computeScore(score, tempScore);
+            score+="-";
+            tempScore = playerTwoScore;
+            score = computeScore(score, tempScore);
 
-            for (int i=1; i<3; i++) {
-                if (i == 1) {
-                    tempScore = playerOneScore;
-                } else {
-                    score+="-";
-                    tempScore = playerTwoScore;
-                }
-                score = computeScore(score, tempScore);
-            }
         }
         return score;
     }
