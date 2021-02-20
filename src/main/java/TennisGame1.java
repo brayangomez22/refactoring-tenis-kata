@@ -50,13 +50,9 @@ public class TennisGame1 implements TennisGame {
         }
         else
         {
-            int tempScore = 0;
-            tempScore = playerOneScore;
-            score = computeScore(score, tempScore);
+            score = computeScore(score, playerOneScore);
             score+="-";
-            tempScore = playerTwoScore;
-            score = computeScore(score, tempScore);
-
+            score = computeScore(score, playerTwoScore);
         }
         return score;
     }
