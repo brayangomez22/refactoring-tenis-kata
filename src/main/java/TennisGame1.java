@@ -50,23 +50,20 @@ public class TennisGame1 implements TennisGame {
         }
         else
         {
-            return getScoreByPoints(playerOneScore) + "-" + getScoreByPoints(playerTwoScore);
+            return Score.nameFromPoints(playerOneScore) + "-" + Score.nameFromPoints(playerTwoScore);
         }
         return score;
     }
 
     private String getScoreByPoints(int points) {
-        switch(points)
-        {
-            case 0:
-                return "Love";
-            case 1:
-                return "Fifteen";
-            case 2:
-                return "Thirty";
-            case 3:
-                return "Forty";
+        return Score.nameFromPoints(points);
+    }
+
+    enum Score {
+        Love, Fifteen, Thirty, Forty;
+
+        public static String nameFromPoints(int points) {
+            return values()[points].name();
         }
-        return "";
     }
 }
