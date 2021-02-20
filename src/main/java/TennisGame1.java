@@ -50,29 +50,23 @@ public class TennisGame1 implements TennisGame {
         }
         else
         {
-            score = computeScore(score, playerOneScore);
-            score+="-";
-            score = computeScore(score, playerTwoScore);
+            return getScoreByPoints(playerOneScore) + "-" + getScoreByPoints(playerTwoScore);
         }
         return score;
     }
 
-    private String computeScore(String score, int points) {
+    private String getScoreByPoints(int points) {
         switch(points)
         {
             case 0:
-                score+="Love";
-                break;
+                return "Love";
             case 1:
-                score+="Fifteen";
-                break;
+                return "Fifteen";
             case 2:
-                score+="Thirty";
-                break;
+                return "Thirty";
             case 3:
-                score+="Forty";
-                break;
+                return "Forty";
         }
-        return score;
+        return "";
     }
 }
