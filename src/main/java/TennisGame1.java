@@ -23,7 +23,7 @@ public class TennisGame1 implements TennisGame {
 
         if (playerOneScore==playerTwoScore)
         {
-            score = getString();
+            return getPointsAll(playerOneScore);
         }
         else if (playerOneScore>=4 || playerTwoScore>=4)
         {
@@ -39,24 +39,18 @@ public class TennisGame1 implements TennisGame {
         return score;
     }
 
-    private String getString() {
-        String score;
+    private String getPointsAll(int playerOneScore) {
         switch (playerOneScore)
         {
             case 0:
-                score = "Love-All";
-                break;
+                return "Love-All";
             case 1:
-                score = "Fifteen-All";
-                break;
+                return "Fifteen-All";
             case 2:
-                score = "Thirty-All";
-                break;
+                return "Thirty-All";
             default:
-                score = "Deuce";
-                break;
+                return "Deuce";
         }
-        return score;
     }
 
     private String getScoreByPoints(int points) {
