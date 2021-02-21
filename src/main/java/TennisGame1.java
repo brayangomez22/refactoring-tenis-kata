@@ -33,8 +33,7 @@ public class TennisGame1 implements TennisGame {
             else if (minusResult>=2) score = "Win for player1";
             else score ="Win for player2";
         }
-        else
-        {
+        else {
             return Score.nameFromPoints(playerOneScore) + "-" + Score.nameFromPoints(playerTwoScore);
         }
         return score;
@@ -56,7 +55,6 @@ public class TennisGame1 implements TennisGame {
             default:
                 score = "Deuce";
                 break;
-
         }
         return score;
     }
